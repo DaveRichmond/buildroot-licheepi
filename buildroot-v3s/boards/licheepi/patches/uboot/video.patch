@@ -1,0 +1,12 @@
+diff --git a/arch/arm/mach-sunxi/Kconfig b/arch/arm/mach-sunxi/Kconfig
+index bc8509b72a..f40b088951 100644
+--- a/arch/arm/mach-sunxi/Kconfig
++++ b/arch/arm/mach-sunxi/Kconfig
+@@ -812,7 +812,6 @@ config VIDEO_SUNXI
+ 	depends on !MACH_SUN8I_A83T
+ 	depends on !MACH_SUNXI_H3_H5
+ 	depends on !MACH_SUN8I_R40
+-	depends on !MACH_SUN8I_V3S
+ 	depends on !MACH_SUN9I
+ 	depends on !MACH_SUN50I
+ 	depends on !SUN50I_GEN_H6
