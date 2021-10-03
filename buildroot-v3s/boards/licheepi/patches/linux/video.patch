@@ -1,0 +1,23 @@
+diff --git a/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts b/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
+index 2e4587d26ce5..6f6a21cd2b3f 100644
+--- a/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
++++ b/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
+@@ -54,6 +54,10 @@ aliases {
+ 
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
++
++		framebuffer-lcd {
++			status = "okay";
++		};
+ 	};
+ 
+ 	leds {
+@@ -99,3 +103,7 @@ &usbphy {
+ 	usb0_id_det-gpios = <&pio 5 6 GPIO_ACTIVE_HIGH>;
+ 	status = "okay";
+ };
++
++&de {
++	status = "okay";
++};
