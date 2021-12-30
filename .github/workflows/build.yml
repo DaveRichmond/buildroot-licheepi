@@ -16,7 +16,9 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
         with:
-          subodules: true
+          submodules: true
+      - name: Check tree
+        run: tree
       - name: Configure
         run: make licheepi_zero_custom_defconfig
       - name: Build
