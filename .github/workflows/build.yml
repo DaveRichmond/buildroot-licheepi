@@ -1,0 +1,30 @@
+name: Build
+on: push
+
+jobs:
+  build:
+    name: Build firmware
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install build deps
+        run: |
+          apt install -y \
+            which sed make binutils build-essential gcc g++ \
+            bash patch gzip bzip2 perl tar cpio unzip rsync \
+            file bc wget python ncurses5 git subversion \
+            graphviz asciidoc python-matplotlib
+      - name: checkout code
+        uses: actions/checkout@v2
+        with:
+          subodules: true
+      - name: Configure
+        run: make licheepi_zero_custom_defconfig
+      - name: Build
+        run: make -j$(nproc)
+      - name: Publish data
+        uses: actions/upload-artifact@v2
+        with:
+          name: Firmware images
+          path: |
+            buildroot/output/images/rootfs.*
+            buildroot/output/images/sdcard.img
