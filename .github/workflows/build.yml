@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Install build deps
         run: |
-          apt install -y \
+          sudo apt install -y \
             which sed make binutils build-essential gcc g++ \
             bash patch gzip bzip2 perl tar cpio unzip rsync \
             file bc wget python ncurses5 git subversion \
