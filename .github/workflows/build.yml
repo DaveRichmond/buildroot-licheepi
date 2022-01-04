@@ -28,5 +28,5 @@ jobs:
         with:
           name: Firmware images
           path: |
-            buildroot/output/images/rootfs.*
+            #buildroot/output/images/rootfs.*
             buildroot/output/images/sdcard.img
